@@ -1,0 +1,96 @@
+@import url('./admin.css');
+@import url("./user.css");
+@import url("./form-style.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ :root {
+    --primary-color: #13a4ec;
+    --background-color: #111c22;
+    --card-bg-color: #1a2831;
+    --input-bg-color: #233c48;
+    --text-primary: #ffffff;
+    --text-secondary: #92b7c9;
+    --border-color: #233c48;
+    --danger-color: #ef4444;
+    --success-color: #22c55e;
+    --warning-color: #f97316;
+    --super-user-accent: #f59e0b;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #e1e1e1;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-new {
+  background: rgba(0, 123, 255, 0.1);
+  color: #0d6efd;
+}
+
+.status-planned {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+ }
+.status-in-progress {
+  background: rgba(0, 123, 255, 0.1);
+  color: #0d6efd;
+}
+.status-done {
+  background: rgba(25, 135, 84, 0.1);
+  color: #198754;
+ }
+.role-badge {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.role-user {
+    background-color: #111c22;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.role-admin {
+    background-color: #111c22;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.role-super-user {
+    background-color: #f59e0b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

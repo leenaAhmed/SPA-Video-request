@@ -1,0 +1,152 @@
+.btn-group {
+  display: inline-flex;
+  background: #1a1f2e;
+  border-radius: 8px;
+  border: 1px solid #2a3142;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-group input[type="radio"] {
+  display: none;
+}
+.btn-group-toggle{
+   padding: 3px;
+   border-radius: 12px;
+}
+
+.btn-group-toggle label {
+  flex: 1;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: #8892b0;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.btn:last-child {
+  border-right: none;
+}
+
+.btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #a8b2d1;
+  border-radius: 8px;
+}
+
+.btn.active {
+  background: var(--background-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.btn.active:hover {
+  background: var(--card-bg-color);
+}
+
+.btn-logout {
+    background-color: var(--card-bg-color) ;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.required {
+  color: #ff4757;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #192b33;
+  border: 1px solid #325567;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: var(--primary-color);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #192b33;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
+}
+
+.form-input::placeholder {
+  color: #888;
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3);
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 16px;
+  background: #192b33;
+  border: 1px solid #325567;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: #888;
+}

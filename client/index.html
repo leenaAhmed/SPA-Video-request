@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA | video request</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+
+  <body>
+    <div class="header" id="header">
+        <div class="header-content">
+            <div class="header-icon"></div>
+            <h1>Video Requests</h1>
+        </div>
+        <div class="header-content">
+            <div class="user-badge d-none" id="userBadge">
+                <span class="">Super User</span>
+            </div>
+               <button class="btn-logout d-none" id="logoutBtn">
+                Logout
+            </button>
+        </div>
+    </div>
+    <div class="user-login-container">
+      <div class="user-login-form">
+        <h1 class="welcome-title">Welcome Back</h1>
+        <form class="form-login" novalidate id="loginUser">
+          <div class="form-group">
+            <label class="form-label">user name</label>
+            <input
+              type="text"
+              class="form-input"
+              name="author_name"
+              placeholder="Enter your username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label">email</label>
+            <input
+              type="email"
+              class="form-input"
+              name="author_email"
+              required
+              placeholder="Enter your email"
+            />
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="container main-user-content d-none">
+      <div class="left-panel user-content">
+        <h2 class="form-title">Submit a Video Request</h2>
+        <form id="video-request-form" novalidate>
+          <div class="form-group">
+            <label class="form-label"
+              >Topic Title <span class="required">*</span>
+              <span class="char-limit">(Max 100 chars)</span></label
+            >
+            <input
+              type="text"
+              class="form-input"
+              name="topic_title"
+              placeholder="Enter topic title"
+              maxlength="100"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Description <span class="required">*</span></label>
+            <textarea
+              class="form-input form-textarea"
+              name="topic_details"
+              placeholder="Describe your video request"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label"
+              >Level <span class="required">*</span></label
+            >
+            <select class="form-input" name="topic_level" required>
+              <option value="">Select level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Request</button>
+        </form>
+      </div>
+
+      <div class="right-panel">
+        <div class="requests-header">
+          <h2 class="requests-title">Video Requests</h2>
+          <div class="search-container">
+            <input
+              type="search"
+              class="search-input"
+              id="search-video-requests"
+              placeholder=" Search video requests"
+            />
+
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-primary active" id="sort_by_new">
+                <input type="radio" name="options" value="newFirst" /> New first
+              </label>
+              <label class="btn btn-primary" id="sort_by_top">
+                <input type="radio" name="options" value="topVotedFirst" />
+                Top voted
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="requests-list" id="video_requests_list"></div>
+      </div>
+    </div>
+    <div class="container-admin-content d-none" id="admin_container">
+        <div class="admin-header">
+          <div>
+            <h2 class="admin-title">
+                Super User Dashboard
+            </h2>
+            <p class="admin-subtitle">
+                Manage all video requests.
+            </p>
+            </div>
+            <div class="admin-filters">
+            <div class="select-wrapper">
+                <select class="form-select" id="filter_by_status">
+                <option value="all" >Filter by status</option>
+                <option value="new" >NEW</option>
+                <option value="planned" >PLANNED</option>
+                <option value="done">DONE</option>
+                </select>
+            </div>
+            </div>
+        </div>
+
+        <table class="requests-stats">
+            <thead class="requests-stats-header">
+            <tr>
+                <th>Request Title</th>
+                <th>Submitted By</th>
+                <th>Dates</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="requests_stats_body" class="requests-stats-body">
+            </tbody>
+        </table>
+     </div>
+    <script type="module" src="src/client.js"></script>
+  </body>
+</html>
