@@ -26,7 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   sortElms.forEach((items) => {
     items.addEventListener("click", function (e) {
       e.preventDefault();
-      state.sortBy = this.querySelector("input").value;
+      const inputElm = this.querySelector("input");
+      if (inputElm) {
+        state.sortBy = inputElm.value;
+      }
       dataService.loadAllVidReqs(state);
       this.classList.add("active");
       if (state.sortBy === "topVotedFirst") {
