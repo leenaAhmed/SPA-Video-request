@@ -20,7 +20,7 @@ export default {
     update: async (id, status, resVideo) => {
       const res = await fetch(`${apiUrl}/video-request`, {
         method: 'PUT',
-        headers: { 'content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, status, resVideo }),
       });
       if (!res.ok) throw new Error(`Failed to update video request: ${res.status}`);
@@ -29,7 +29,7 @@ export default {
     delete: async (id) => {
       const res = await fetch(`${apiUrl}/video-request`, {
         method: 'DELETE',
-        headers: { 'content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id }),
       });
       if (!res.ok) throw new Error(`Failed to delete video request: ${res.status}`);
