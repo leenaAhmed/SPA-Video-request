@@ -1,4 +1,4 @@
-export function applyVoteStyle(videoId, videoList, isDisapled, state, voteType) {
+export function applyVoteStyle(videoId, videoList, isDisabled, state, voteType) {
   if (!voteType) {
     if (videoList.ups.includes(state.userId)) {
       voteType = "ups";
@@ -12,12 +12,12 @@ export function applyVoteStyle(videoId, videoList, isDisapled, state, voteType) 
   const voteUpsElm = document.getElementById(`vote-ups-${videoId}`);
   const voteDownElm = document.getElementById(`vote-downs-${videoId}`);
 
-  if (isDisapled) {
+  if (isDisabled) {
     voteUpsElm.style.opacity = 0.5;
     voteUpsElm.style.cursor = "not-allowed";
     voteDownElm.style.opacity = 0.5;
     voteDownElm.style.cursor = "not-allowed";
-    return
+    return;
   }
 
   const voteUpsDirElm = voteType === "ups" ? voteUpsElm : voteDownElm;
@@ -26,9 +26,21 @@ export function applyVoteStyle(videoId, videoList, isDisapled, state, voteType) 
   if (videoList[voteType].includes(state.userId)) {
     voteUpsDirElm.style.opacity = 1;
     voteDownsDirElm.style.opacity = 0.5;
-    voteUpsDirElm.classList.add("upvoted");
+    if (voteType === "ups") {
+      voteUpsDirElm.classList.add("upvoted");
+    voteDownsDirElm.style.opacity = 1;
+    voteDownsDirElm.classList.add("downvoted");
+      voteUpsDirElm.classList.remove("upvoted");
+      voteDownsDirElm.classList.add("downvoted");
+    }
   } else {
     voteDownsDirElm.style.opacity = 1;
-    voteDownsDirElm.classList.add("upvoted");
+    if (voteType === "downs") {
+      voteDownsDirElm.classList.add("downvoted");
+      voteUpsDirElm.classList.remove("upvoted");
+    } else {
+      voteDownsDirElm.classList.remove("downvoted");
+      voteUpsDirElm.classList.add("upvoted");
+    }
   }
 }
