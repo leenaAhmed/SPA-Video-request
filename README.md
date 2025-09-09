@@ -63,8 +63,8 @@ npm start
 bash
 
 # from the project root
-python -m http.server 8080
-# then open http://localhost:8080/client/index.html
+ python -m http.server 8080
+ then open http://localhost:8080/client/index.html
 
 ### Environment Variables
 Currently, API base URL is hardcoded in client/src/api.js. For a different server host/port, update that file or serve behind a proxy.
