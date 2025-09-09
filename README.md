@@ -47,10 +47,6 @@ SPA-Video/
 
 ### Quick Start
 1) Install server dependencies
-bash
-cd server
-npm install
-
 
 2) Configure MongoDB
 - Ensure MongoDB is running locally, or update the connection string in server/models/mongo.config.js.
@@ -67,10 +63,9 @@ npm start
 bash
 # from the project root
 python -m http.server 8080
+# from the project root
+python -m http.server 8080
 # then open http://localhost:8080/client/index.html
-
-
-Note: The client expects the API at http://localhost:7777 (see client/src/api.js).
 
 ### Environment Variables
 Currently, API base URL is hardcoded in client/src/api.js. For a different server host/port, update that file or serve behind a proxy.
