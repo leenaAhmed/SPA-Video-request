@@ -16,27 +16,29 @@ A simple single-page app to submit and manage video requests, built with no fron
 
 ### Project Structure
 
+```
 SPA-Video/
-  client/
-    assets/        # stylesheets and static assets
-    index.html     # SPA entry
-    src/           # client-side modules
-      admin.js
-      api.js
-      applyVoteStyle.js
-      changeUserLayout.js
-      client.js
-      dataService.js
-      debounce.js
-      renderAdminView.js
-      renderSingleVid.js
-      userUi.js
-      validation.js
-  server/
-    data/          # data access layer
-    models/        # Mongoose models and Mongo config
-    index.js       # Express app
-    package.json
+├── client/
+│   ├── assets/            # Stylesheets and static assets
+│   ├── index.html         # SPA entry point
+│   └── src/               # Client-side modules
+│       ├── admin.js
+│       ├── api.js
+│       ├── applyVoteStyle.js
+│       ├── changeUserLayout.js
+│       ├── client.js
+│       ├── dataService.js
+│       ├── debounce.js
+│       ├── renderAdminView.js
+│       ├── renderSingleVid.js
+│       ├── userUi.js
+│       └── validation.js
+├── server/
+│   ├── data/              # Data access layer
+│   ├── models/            # Mongoose models and Mongo config
+│   ├── index.js           # Express app entry
+│   └── package.json
+```
 
 
 ### Prerequisites
