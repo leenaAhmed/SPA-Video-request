@@ -61,8 +61,7 @@ npm start
   - Using VS Code Live Server, or
   - Using a quick static server, e.g. Python:
 bash
-# from the project root
-python -m http.server 8080
+
 # from the project root
 python -m http.server 8080
 # then open http://localhost:8080/client/index.html
