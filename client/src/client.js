@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // check validation
     const isValid = validateForm(formData);
     if (!isValid) return;
-    dataService.addNewVideo(formData , state)
+    dataService.addNewVideo(formData , state);
   });
 
   const loginUserElm = document.getElementById("loginUser");
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loginUserElm.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(loginUserElm);
-     const isValid = loginFormValidation(formData);
+    const isValid = loginFormValidation(formData);
     if (!isValid) return;
     dataService.login(formData, state);
   });

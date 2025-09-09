@@ -11,11 +11,13 @@ function initVoteControls(id, status, state) {
     }
     item.addEventListener("click", function (e) {
       e.preventDefault();
-      const [, vote_type, id] = e.target.getAttribute("id").split("-");
-      dataService.updateVotes(vote_type, id, status, state);
+      const [, vote_type, voteId] = e.target.getAttribute("id").split("-");
+      dataService.updateVotes(vote_type, voteId, status, state);
     });
   });
 }
+
+
 export function renderSingleVidReq(videoInfo, state, isPrepend = false) {
   const videoReqContainer = document.createElement("div");
   const { _id: id, votes, status, video_ref: videoRef } = videoInfo;
@@ -30,5 +32,6 @@ export function renderSingleVidReq(videoInfo, state, isPrepend = false) {
 
   applyVoteStyle(id, votes, isVideoDone, state);
   initVoteControls(id, status, state);
+
   return videoListElm;
 }

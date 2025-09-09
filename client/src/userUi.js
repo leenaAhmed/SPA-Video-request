@@ -10,7 +10,7 @@ export function userLayout({
   submit_date: date,
   target_level: level,
 }) {
-  const voteScore = votes?.ups.length - votes?.downs.length;
+  const voteScore = (votes?.ups ?? []).length - (votes?.downs ?? []).length;
   const isVideoDone = status === "done";
   return `
       <div class="request-item">
@@ -26,21 +26,23 @@ export function userLayout({
                         <p>${details}</p>
                     </div>
                     <div class="request-footer">
-                        by ${author} on ${new Date(date).toLocaleDateString()}
+                        by ${author} on ${
+                          date && !isNaN(new Date(date).getTime())
+                            ? new Date(date).toLocaleDateString()
+                            : "Unknown date"
+                        }
+                        <span class="status-badge status-${status ?? 'unknown'}">${(status ?? 'unknown').toUpperCase()}</span>
                     </div>
                 </div>
-                <div class="request-meta">
-                    <span class="status-badge status-${status}">${status.toUpperCase()}</span>
-                </div>
-              ${
-                isVideoDone
-                  ? `<div class="video-thumbnail">
-                <iframe 
-                    src="https://www.youtube.com/embed/${videoRef?.link || ''}"
-                    frameborder="0" allowfullscreen></iframe>
-                </div>`
-                  : ""
-              }
+                ${
+                  isVideoDone
+                    ? `<div class="video-thumbnail">
+                  <iframe 
+                      src="https://www.youtube.com/embed/${videoRef?.link || ''}"
+                      style="border:none;" allowfullscreen></iframe>
+                  </div>`
+                    : ""
+                }
             </div>
           </div>
   `;
